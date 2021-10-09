@@ -29,7 +29,9 @@ int main(int argc, char *argv[]) {
 
 	cout << endl;
 
-	auto smartArray = make_shared<int[]>(N);
+	//auto smartArray = make_shared<int[]>(N); // Da error
+	//auto smartArray = make_unique<int[]>(N); // No da error con unique
+	shared_ptr<int[]> smartArray(new int[N]);
 
 	for (int i = 0; i < N; i++) {
 		smartArray[i] = i * 10;
